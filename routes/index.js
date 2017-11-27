@@ -19,7 +19,7 @@ router.post('/candidate', function(req, res, next) {
 router.get('/candidate/:candidate', function(req,res,next) {
 	res.json(req.comment);
 });
-router.put('/candidate/:candidate', fucntion(req,res,next) {
+router.put('/candidate/:candidate', function(req,res,next) {
 	req.comment.upvote(function(err, comment) {
 		if(err) return next(err);
 		res.json(comment);

@@ -36,7 +36,7 @@ function MainCtrl($scope, $http) {
         };
         $scope.getAll = function() {
                 return $http.get('/candidate').success(function(data) {
-                        angular.copy(data, $scope.comments);
+                        angular.copy(data, $scope.candidates);
                 });
         };
         $scope.getAll();

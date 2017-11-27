@@ -16,6 +16,12 @@ router.post('/candidate', function(req, res, next) {
 		res.json(candidate);
 	});
 });
+router.get('/candidate', function(req,res,next) {
+	Candidate.find(function(err, candidates) {
+		if(err) return next(err);
+		res.json(candidates);
+	});
+});
 router.get('/candidate/:candidate', function(req,res,next) {
 	res.json(req.comment);
 });

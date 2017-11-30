@@ -11,9 +11,9 @@
 <input type="text" ng-model="formContent"></input>
 <button type="submit">Add Candidate</button>
 </form>
-  <div ng-repeat="candidate in candidates | orderBy: '-upvotes'">
+  <div ng-repeat="candidate in candidates | orderBy: ['-votes', 'title']">
         <span class="glyphicon glyphicon-remove" ng-click="delete(candidate)"></span>
-        {{candidate.title}} - upvotes: {{candidate.upvotes}}
+        {{candidate.title}} - votes: {{candidate.votes}}
   </div>
 </body>
 </html>

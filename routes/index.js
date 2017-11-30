@@ -25,8 +25,8 @@ router.get('/candidate', function(req,res,next) {
 router.get('/candidate/:candidate', function(req,res,next) {
 	res.json(req.comment);
 });
-router.put('/candidate/:candidate', function(req,res,next) {
-	req.comment.upvote(function(err, comment) {
+router.put('/candidate/:candidate/upvote', function(req,res,next) {
+	req.candidate.upvote(function(err, comment) {
 		if(err) return next(err);
 		res.json(comment);
 	});

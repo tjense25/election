@@ -7,13 +7,19 @@
 </head>
 <body ng-app="election" ng-controller="MainCtrl">
 <h1> Voter Interface </h1>
+<h2> Current Candidates </h2>
 <form ng-submit="vote()">
-<div ng-repeat="candidate in candidates | orderBy: ['-upvotes','Name']">
+<div ng-repeat="candidate in candidates | orderBy: 'title'">
         <input type="checkbox" ng-model="candidate.selected"> {{candidate.title}}
   </div>
-<button type="submit">Vote!</button>
+<button type="submit">Submit Votes</button>
 </form>
-  
+<div id="results" ng-if="voted">
+<h2> Submitted Ballot </h2>
+<div ng-repeat="candidate in selectedCandidates | orderBy: 'title'">
+	{{candidate.title}}
+</div>
+</div>
 </body>
 </html>
 
